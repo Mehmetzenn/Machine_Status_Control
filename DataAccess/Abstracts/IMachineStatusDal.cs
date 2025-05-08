@@ -1,4 +1,5 @@
 ﻿using Core.DataAccess;
+using Entities.Abstracts;
 using Entities.Concretes;
 using System;
 using System.Collections.Generic;
@@ -10,5 +11,6 @@ namespace DataAccess.Abstracts
 {
     public interface IMachineStatusDal : IEntityRepository<MachineStatus>
     {
+        List<MachineStatusDto> GetStatusDetail();
     }
 }

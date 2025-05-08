@@ -1,4 +1,5 @@
 ﻿using Core.Utilities.Results;
+using Entities.Abstracts;
 using Entities.Concretes;
 using System.Collections.Generic;
 
@@ -8,12 +9,13 @@ namespace Business.Abstract
     {
         IDataResult<List<MachineStatus>> GetAll();
         IDataResult<MachineStatus> GetById(int id);
-        IDataResult<List<MachineStatus>> GetLastStatusByMachineId(int machineId);
         IResult Add(MachineStatus machineStatus);
+        IDataResult<List<MachineStatus>> GetByMachineIdAndDate(int machineId, DateTime date);
         IResult Update(MachineStatus machineStatus);
         IResult Delete(MachineStatus machineStatus);
-        IDataResult<List<MachineStatus>> GetByMachineIdAndShift(int machineId, TimeSpan time, DateTime date);
-        IDataResult<TimeSpan> CalculateWorkingTime(List<MachineStatus> statuses);
+        IDataResult<List<MachineStatusDto>> GetStatusDetail();
+        IDataResult<List<MachineStatus>> GetByCurrentShift();
+
 
     }
 }

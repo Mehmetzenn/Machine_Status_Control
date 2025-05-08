@@ -13,7 +13,8 @@ namespace Entities.Concretes
 
         public int MachineId { get; set; }
         public int StatusId { get; set; }
-
+        
+        public int ShiftId { get; set; }
         public DateTime Date { get; set; }
         public TimeSpan Time { get; set; }
 
